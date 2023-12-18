@@ -12,7 +12,7 @@ a=a/10, c=c/2, b=b-1, d=d*(c+b+a)
 int main() {
     float a = 5, b;
     int c = 5, d;
-    printf("b =");
+    printf("b = ");
     scanf("%f", &b);
     printf("d = ");
     scanf("%d", &d);

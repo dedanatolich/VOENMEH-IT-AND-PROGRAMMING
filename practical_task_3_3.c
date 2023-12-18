@@ -9,22 +9,27 @@ for. Во второй программе использовать циклы wh
 
 #include <stdio.h>
 #include <math.h>
+#include <conio.h>
 
-int factorial(int n) {
-    int flag;
-    if (n == 0 || n == 1) flag = 1;
-    else flag = n * factorial(n-1);
-    return flag;
+int factorial(int n) {   
+    int sum = n;
+    if (n > 1) sum = sum * factorial(n - 1);
+    return sum;
 }
 
 double calculateSum(double x) {
-    double sum = 0;
+    double previous, current;
+    double sum = 0.0;
     int n = 1;
-    double term = 1;
-    while (term >= pow(10, -6)) {
-        sum += (pow(-1, n)*pow(x, n-1))/(factorial(n+1));
+    current = (pow(-1, n)*pow(x, n-1))/(factorial(n+1));
+    sum += current;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    n++;
+    do {
+        previous = current;
+        current = (pow(-1, n)*pow(x, n-1))/(factorial(n+1));
+        sum += current;
         n++;
-    }
+    } while (abs(current - previous) > pow(10, -6));
     return sum;
 }
 

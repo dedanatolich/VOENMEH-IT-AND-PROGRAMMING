@@ -11,7 +11,6 @@ int main() {
     int *a, b;
     float *x, y = 3.5;
     double *m, n;
-    clrscr();
     printf("Enter b = ");
     scanf("%d", &b);
     a = &b;
@@ -21,7 +20,7 @@ int main() {
     b -= y;
     printf("a = %p\t*a = %d\tb = %d\n", a, *a, b);
     getch();
-    m = a;
+    m = (double*)a;
     printf("a = %p\tm = %p\n", a, m);
     getch();
     m = &n;

@@ -22,12 +22,8 @@ int main() {
         }
     }
     int min = A[0];
-    int pos = 0;
     for (int i = 1; i < 35; i++) {
-        if (A[i] < min) {
-            min = A[i];
-            pos = i;
-        }
+        if (A[i] < min) min = A[i];
     }
     printf("Min: %d\n", min);
     printf("Position: ");

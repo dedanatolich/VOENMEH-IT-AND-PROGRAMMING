@@ -18,15 +18,21 @@ int main() {
     printf("Enter the range values A and B: ");
     scanf("%d%d", &A, &B);
     printf("Enter the array elements:\n");
-    for (int i = 0; i < 17; i++) scanf("%d", &C[i]);
     int count = 0;
+    int index = 0;
+    for (int i = 0; i < 17; i++) scanf("%d", &C[i]);                                                                                                                              
     for (int i = 0; i < 17; i++) {
-        if (C[i] < A || C[i] > B) {
-            int temp = C[count];
-            C[count] = C[i];
-            C[i] = temp;
-            count++;
-            if (count == 2) break;
+        if (C[i] >= A && C[i] <= B) {
+            if (count == 0) {
+                index = i;
+                count++;
+            } else if (count == 1) {
+                int temp = C[i];
+                C[i] = C[index];
+                C[index] = temp;
+                count++;
+                break;
+            }
         }
     }
     printf("New array: ");
